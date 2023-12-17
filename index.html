@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assignment 9</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles/all.min.css" />
+    <link rel="stylesheet" href="assets/styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+  </head>
+  <body style="background-color: #f7ebdd">
+    <header
+      class="d-flex align-items-center justify-content-center flex-column container"
+      id="main"
+    >
+      <div class="py-2 position-relative mt-3" id="bookmarker">
+        <h1 class="font-head">Bookmarker</h1>
+      </div>
+      <div class="bookmark-body w-100">
+        <h2 class="pt-4 text-center">
+          <i class="fa-solid fa-bookmark"></i>
+          Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+        <div class="site-name w-100 d-flex flex-column justify-content-center">
+          <label for="bookmarkName" class="pb-2 fw-semibold w-100">
+            <i class="fa-solid fa-book-bookmark pe-2"> </i>
+            Site Name
+          </label>
+          <input
+            type="text"
+            placeholder="Bookmark name"
+            class="form-control"
+            id="bookmarkName"
+          />
+        </div>
+        <div
+          class="site-url w-100 d-flex flex-column justify-content-center pt-5"
+        >
+          <label for="bookmarkURL" class="pb-2 fw-semibold">
+            <i class="fa-solid fa-link pe-2"></i>Site URL</label
+          >
+          <input
+            type="url"
+            placeholder="Website URL"
+            class="form-control"
+            id="bookmarkURL"
+          />
+        </div>
+        <div class="text-center py-3">
+          <button
+            onclick="addBookmark()"
+            class="btn btn-primary px-5 mx-3"
+            id="submitBtn"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+      <input
+        type="text"
+        placeholder="Search Bookmark Name ...."
+        class="form-control w-75 m-auto mt-4"
+        oninput="searchBookMark(this.value)"
+      />
+      <table class="table mt-4 text-center bg-light">
+        <thead>
+          <tr>
+            <th class="text-capitalize">index</th>
+            <th class="text-capitalize">Website Name</th>
+            <th class="text-capitalize">Url</th>
+            <th class="text-capitalize">Visit</th>
+            <th class="text-capitalize">Delete</th>
+          </tr>
+        </thead>
+        <tbody id="tableContent"></tbody>
+      </table>
+    </header>
+
+    <div
+      class="box-info position-absolute start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center d-none"
+      id="box-info"
+    >
+      <div class="box-conent bg-white p-4 rounded-2 shadow-lg">
+        <header
+          class="box-header w-100 d-flex justify-content-between align-items-center mb-4"
+        >
+          <div class="circles d-flex">
+            <span class="rounded-circle me-2"></span>
+            <span class="rounded-circle me-2"></span>
+            <span class="rounded-circle me-2"></span>
+          </div>
+          <button class="btn border-0" id="closeBtn" onclick="hideinfo()">
+            <i class="fa-solid fa-xmark close fs-3"></i>
+          </button>
+        </header>
+        <p class="m-0 pb-2">
+          Site Name or Url is not valid, Please follow the rules below :
+        </p>
+        <ol class="rules list-unstyled m-0">
+          <li>
+            <i class="fa-regular fa-circle-right p-2"></i>Site name must contain
+            at least 3 characters and start with CAPITAL letter
+          </li>
+          <li>
+            <i class="fa-regular fa-circle-right p-2"></i>Site URL must be a
+            valid one
+          </li>
+        </ol>
+      </div>
+    </div>
+    <script src="assets/scripts/main.js"></script>
+  </body>
+</html>
